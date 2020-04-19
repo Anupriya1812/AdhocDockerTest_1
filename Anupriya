@@ -70,6 +70,7 @@ ________________________________________________________________________________
 to make a dockerfile and then host a webapp using it
 - create a dockerfile firstly
 DOCKERFILE:
+vim Dockerfile
 FROM centos 
 MAINTAINER anupriyashroti@gmail.com
 RUN yum install httpd -y
@@ -83,7 +84,7 @@ ENTRYPOINT httpd -DFOREGROUND
 docker build -t anupriya:q4 -f Dockerfile .
 
 -use the command for creating container:
-docker run --name anupriyaq4 -itd -p 9090:80 anupriya:q4
+docker run --name anupriyaq4 -itd -p 9980:80 anupriya:q4
 -use the previos task2 commands to push tyhe image to dockerhub
 
 ###Task-5
