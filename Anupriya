@@ -1,0 +1,42 @@
+### TASK-1
+to create a container using
+docker image alpine:yourname and store the time in a textfile called "question1.txt"
+Answer:create a dockerfile and a python file
+____________________________________________________________________________________
+code for python file:
+from datetime import datetime
+
+now = datetime.now()
+
+current_time = now.strftime("%H:%M:%S")
+print("Current Time =", current_time)
+
+f = open('question1.txt', 'w')
+print(now, file = f)
+________________________________________________________________________________________
+
+- first create a docker image using the a dockerfile, use the command - docker build -t alpine:anupriya -f dockerfile.txt .
+- once the image is succesfully build, run a container using this image and use the command - docker run -it --rm alpine:anupriya
+the container runs and the time is shown as 12:24:22
+run the container again and use:
+exec > "$2"
+myscript 192.0.2.42 output.txt
+and the output will be stored
+
+###TASK-2
+to create a docker image using the given git url and then pushing it to dockerhub
+Answer:
+-use the following command to build the docker image:
+docker build -t adhoc:anupriya https://github.com/redashu/summer2020dockertest.git
+-after the image is build, tag the image properly using the following command:
+docker tag adhoc:anupriya anupriya18/adhoc:anupriya
+-the image will get successfully tagged, now login to your docker account and push the image using the command:
+docker push anupriya18/adhoc:anupriya
+-the image will get successfully pushed.
+-use the same command for output as in task 1
+
+
+
+
+
+
