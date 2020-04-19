@@ -69,13 +69,28 @@ ________________________________________________________________________________
 ###TASK- 4:
 to make a dockerfile and then host a webapp using it
 - create a dockerfile firstly
-use the previos task2 commands to push tyhe image to dockerhub
+DOCKERFILE:
+FROM centos 
+MAINTAINER anupriyashroti@gmail.com
+RUN yum install httpd -y
+RUN mkdir /mycode1
+COPY index.html /mycod1e/index.html
+copy mycode1  /var/www/html
+EXPOSE 80
+ENTRYPOINT httpd -DFOREGROUND
+
+- use the command to building the image:
+docker build -t anupriya:q4 -f Dockerfile .
+
+-use the command for creating container:
+docker run --name anupriyaq4 -itd -p 9090:80 anupriya:q4
+-use the previos task2 commands to push tyhe image to dockerhub
 
 ###Task-5
 to create a volume, attach two of them to the container and create qa file with the output
 - use the command:docker create volume anupriyavol1
 -use the command for running : ocker run -it --name anupriyacc5q5 -v anupriyavol1:/data18  alpine sh
-
+-couldnt fully complete
 
 
 
